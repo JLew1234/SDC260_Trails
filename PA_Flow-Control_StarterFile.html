@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Author: Jonathan M. Lewellen
+        Date: 10/10/2023
+        Purpose: Display trail information and handle form logic
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenway Park Trail Recommender</title>
+    <link rel="stylesheet" href="PA_Flow-Control_StarterFile.css">
+    <script src="PA_Flow-Control_StarterFile.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <h1>Greenway Park Trail Recommender</h1>
+        <p>Discover trails based on your hiking level and park needs.</p>
+
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="#trails">Trails</a></li>
+                <li><a href="#recommendation">Find a Trail</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+    <main>
+
+        <!-- INTRO SECTION -->
+        <section aria-label="Introduction">
+            <h2>Plan Your Outdoor Adventure</h2>
+            <p>
+                Use the trail explorer below to find safe, scenic paths throughout Greenway Park.
+            </p>
+        </section>
+
+        <!-- TRAIL LIST -->
+        <section id="trails">
+            <h2>Available Trails</h2>
+            <section id="trailContainer" class="grid"></section>
+        </section>
+
+        <!-- RECOMMENDER -->
+        <section id="recommendation">
+            <h2>Trail Finder</h2>
+
+            <form id="trailForm">
+                <fieldset>
+                    <legend>Bringing a pet?</legend>
+                    <label><input type="radio" name="pets" value="yes" required> Yes</label>
+                    <label><input type="radio" name="pets" value="no"> No</label>
+                </fieldset>
+
+                <label for="experience">Hiking Experience:</label>
+                <select id="experience" name="experience" required>
+                    <option value="" disabled selected>Select level</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+
+                <button type="submit">Get Recommendation</button>
+            </form>
+
+            <aside id="result" aria-live="polite"></aside>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>Greenway Park • Open Daily Sunrise to Sunset</p>
+    </footer>
+</body>
+</html>
